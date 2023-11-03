@@ -13,17 +13,40 @@
  *     }
  * }
  */
+// class Solution {
+//     public List<List<Integer>> levelOrder(TreeNode root) {
+//         List<List<Integer>> result = new ArrayList<>();
+//         levelorderrecursive(root, 0, result);
+//         return result;
+//     }
+//     private static void levelorderrecursive(TreeNode root, int level, List<List<Integer>>result){
+//         if(root==null){
+//             return;
+//         }
+//         if(result.size()==level){
+//             List<Integer> list = new ArrayList<>();
+//             list.add(root.val);
+//             result.add(list);
+//         }
+//         else{
+//             result.get(level).add(root.val);
+//         }
+//         levelorderrecursive(root.left, level+1, result);
+//         levelorderrecursive(root.right, level+1, result);
+//     }
+// }
+
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         levelorderrecursive(root, 0, result);
         return result;
     }
-    private static void levelorderrecursive(TreeNode root, int level, List<List<Integer>>result){
+    private static void levelorderrecursive(TreeNode root, int level, List<List<Integer>> result){
         if(root==null){
             return;
         }
-        if(result.size()==level){
+        if(result.size() == level){
             List<Integer> list = new ArrayList<>();
             list.add(root.val);
             result.add(list);
@@ -31,7 +54,7 @@ class Solution {
         else{
             result.get(level).add(root.val);
         }
-        levelorderrecursive(root.left, level+1, result);
-        levelorderrecursive(root.right, level+1, result);
+        levelorderrecursive(root.left, level + 1, result);
+        levelorderrecursive(root.right, level + 1, result);
     }
 }
